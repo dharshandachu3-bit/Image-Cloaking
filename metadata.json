@@ -1,0 +1,6 @@
+{
+  "name": "Privacy-Preserving Image Cloaking",
+  "description": "Protect photographs from automated AI image classification using resolution-decoupled FGSM and PGD adversarial perturbations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

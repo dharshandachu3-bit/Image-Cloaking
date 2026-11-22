@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-navy-950: #080D1B;
+  --color-navy-900: #101A2E;
+  --color-navy-850: #14213B;
+  --color-navy-800: #1A2947;
+  --color-electric: #397BFF;
+  --color-cyan-accent: #00D4FF;
+}
+
+@layer base {
+  html {
+    background-color: #080D1B;
+    color: #F1F5F9;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    letter-spacing: 0.01em;
+    background-color: #080D1B;
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.glass-surface {
+  background: rgba(16, 26, 46, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.glass-surface-subtle {
+  background: rgba(16, 26, 46, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.glow-border {
+  border: 1px solid rgba(57, 123, 255, 0.32);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.08), 0 18px 42px -18px rgba(8, 13, 27, 0.85);
+}
+
+/* Custom precision range slider */
+input[type="range"].precision-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(148, 163, 184, 0.22);
+  outline: none;
+}
+
+input[type="range"].precision-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #397BFF;
+  border: 2px solid #E2E8F0;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].precision-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background: #00D4FF;
+}
+
+input[type="range"].precision-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #397BFF;
+  border: 2px solid #E2E8F0;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
